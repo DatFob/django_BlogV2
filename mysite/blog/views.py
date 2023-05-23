@@ -12,8 +12,7 @@ def post_list(request):
 def post_detail(request, id):
     try:
         post = get_object_or_404(Post,
-                                 id = id,
-                                 status=Post.Status.Pub)
+                                 id = id)
     except Post.DoesNotExist:
         raise Http404("No post found")
     return render(request,
